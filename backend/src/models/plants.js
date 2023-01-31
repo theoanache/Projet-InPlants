@@ -14,10 +14,21 @@ const findOnePlant = (id) => {
     .then(([res]) => res);
 };
 
+const findPlantByFamily = (id) => {
+  return db
+    .promise()
+    .query(
+      "SELECT * FROM plants INNER JOIN family ON plants.family_id = family.id WHERE family.id=?",
+      [Number(id)]
+    )
+    .then(([res]) => res);
+};
+
 const updatePlant = (payload, id) => {
   return db
     .promise()
-    .query("UPDATE plants SET ? WHERE id=?", [payload, Number(id)]);
+    .query("UPDATE plants SET ? WHERE id=?", [payload, Number(id)])
+    .then(([res]) => res);
 };
 
 const deletePlants = (id) => {
@@ -30,6 +41,7 @@ const deletePlants = (id) => {
 module.exports = {
   findAllPlants,
   findOnePlant,
+  findPlantByFamily,
   updatePlant,
   deletePlants,
 };

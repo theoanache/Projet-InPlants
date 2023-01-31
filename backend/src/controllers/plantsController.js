@@ -22,6 +22,20 @@ const plantsController = {
       .catch((err) => next(err));
   },
 
+  GetPlantByFamily: (req, res, next) => {
+    const { id } = req.params;
+    plantsModel
+      .findAllPlants(id)
+      .then((plant) => {
+        if (plant.length === 0) {
+          res.status(404).send(`Plant with ${id} not found`);
+        } else {
+          res.send(plant[0]);
+        }
+      })
+      .catch((err) => next(err));
+  },
+
   updatePlant: (req, res, next) => {
     const { id } = req.params;
     const plantsData = req.body;
@@ -31,7 +45,7 @@ const plantsController = {
         if (plant.affectedRows !== 0) {
           res.status(200).send(`Plant with ${id} has been updated`);
         } else {
-          res.status(404).send(`Error updaing plant with ${id}`);
+          res.status(404).send(`Error updating plant with ${id}`);
         }
       })
       .catch((err) => next(err));
