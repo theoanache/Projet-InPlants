@@ -1,20 +1,31 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import CoeurGris from "../assets/coeur-gris.png";
 import Search from "../assets/search-gris.png";
 import User from "../assets/user-gris.png";
 
 function Header() {
+  const Navbar = [
+    { id: 1, title: "Accueil", link: "/" },
+    { id: 2, title: "A propos", link: "/about" },
+    { id: 3, title: "Produits", link: "/product" },
+    { id: 4, title: "Contact", link: "/contact" },
+  ];
+
   return (
     <div className="flex items-end justify-between w-screen pt-8">
       <div className="w-28 ml-12">
         <img src={Logo} alt="logo Inplants" />
       </div>
       <div className="flex gap-8 font-semibold text-grey text-lg">
-        <h4 className=" hover:text-green">Accueil</h4>
-        <h4 className=" hover:text-green">A propos</h4>
-        <h4 className=" hover:text-green">Produits</h4>
-        <h4 className=" hover:text-green">Contact</h4>
+        {Navbar.map((element) => (
+          <NavLink key={element.key} to={element.link}>
+            <h4 className="pl-3 pr-3 pt-1 pb-1 rounded-[10px] hover:text-white hover:bg-green">
+              {element.title}
+            </h4>
+          </NavLink>
+        ))}
       </div>
       <div className="flex justify-end gap-5 w-6 mr-12">
         <img src={Search} alt="icon loupe" />

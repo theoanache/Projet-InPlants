@@ -1,11 +1,9 @@
-import Header from "@components/Header";
-import Presentation from "@components/Presentation";
 import React from "react";
+import Presentation from "../components/Presentation";
 
 function HomePage() {
   return (
     <div>
-      <Header />
       <Presentation />
     </div>
   );
