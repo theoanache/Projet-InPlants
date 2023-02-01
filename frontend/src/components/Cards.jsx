@@ -19,7 +19,7 @@ function Cards() {
 
   const deletePlant = () => {
     axios
-      .delete(`http://localhost:5000/plant/${id}`)
+      .delete(`http://localhost:5000/plants/${id}`)
       .then((res) => setPlants(res));
   };
 
@@ -57,7 +57,7 @@ function Cards() {
               <div
                 className="-top-8 left-32 absolute w-[30px] h-[30px] bg-red-700 right-1 rounded-full z-2 text-white flex items-center justify-center font-black text-md cursor-pointer"
                 role="presentation"
-                onClick={deletePlant}
+                onClick={() => deletePlant(id)}
               >
                 &#x2715;
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Product() {
+function Plantes() {
   return (
     <div>
       <h4>Product</h4>
@@ -8,4 +8,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Plantes;
