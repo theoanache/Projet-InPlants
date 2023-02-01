@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Product from "./pages/Product";
+import Plantes from "./pages/Plantes";
 import Favorites from "./pages/Favorites";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/plantes" element={<Plantes />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>

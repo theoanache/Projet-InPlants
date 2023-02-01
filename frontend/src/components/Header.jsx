@@ -9,7 +9,7 @@ function Header() {
   const Navbar = [
     { id: 1, title: "Accueil", link: "/" },
     { id: 2, title: "A propos", link: "/about" },
-    { id: 3, title: "Produits", link: "/product" },
+    { id: 3, title: "Plantes", link: "/plantes" },
     { id: 4, title: "Contact", link: "/contact" },
   ];
 

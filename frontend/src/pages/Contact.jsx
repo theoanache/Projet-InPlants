@@ -18,7 +18,7 @@ function Contact() {
             <img className="w-16" src={In} alt="picto linkedin" />
           </a>
           <a href="mailto:theoo.anache@gmail.com">
-          <img className="w-16" src={Mail} alt="picto mail" />
+            <img className="w-16" src={Mail} alt="picto mail" />
           </a>
         </div>
       </div>
