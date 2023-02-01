@@ -35,8 +35,8 @@ function Presentation() {
           </div>
         </div>
         <div className="w-1/2 relative">
-          <div className="absolute md:drop-shadow-xl flex items-center bg-gray rounded-[16px] h-24 w-60 top-64 -left-24">
-            <div className="pl-5 pt-4 ml-2 w-[80px] h-[80px] bg-white rounded-lg">
+          <div className="absolute md:drop-shadow-xl flex items-center backdrop-blur-sm bg-gray rounded-[16px] h-24 w-60 top-64 -left-24">
+            <div className="pl-5 pt-4 ml-2 w-[80px] h-[80px] bg-white rounded-lg ">
               <img className="h-4/5" src={BestDeal} alt="icon meilleur vente" />
             </div>
             <div className="pl-2">
