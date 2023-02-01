@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
-import CoeurGris from "../assets/coeur-gris.png";
+import Caddie from "../assets/caddie.png";
 import Search from "../assets/search-gris.png";
 import User from "../assets/user-gris.png";
 
@@ -9,7 +9,7 @@ function Header() {
   const Navbar = [
     { id: 1, title: "Accueil", link: "/" },
     { id: 2, title: "A propos", link: "/about" },
-    { id: 3, title: "Plantes", link: "/plantes" },
+    { id: 3, title: "Plantes", link: "/plante" },
     { id: 4, title: "Contact", link: "/contact" },
   ];
 
@@ -29,7 +29,7 @@ function Header() {
       </div>
       <div className="flex justify-end gap-5 w-6 mr-12">
         <img src={Search} alt="icon loupe" />
-        <img src={CoeurGris} alt="icon favori" />
+        <img src={Caddie} alt="icon favori" />
         <img src={User} alt="icon utilisateur" />
       </div>
     </div>

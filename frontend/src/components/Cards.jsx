@@ -47,7 +47,7 @@ function Cards() {
           <Link to={`/plante/${plant.id}`}>
             <div
               key={plant.id}
-              className="flex items-center mt-5 bg-white min-w-[350px] rounded-[20px]"
+              className="flex items-center mt-5 bg-white h-[100%] min-w-[350px] rounded-[20px]"
             >
               <div className="h-full w-1/2 flex items-center">
                 <ImgCard
@@ -69,7 +69,7 @@ function Cards() {
             </div>
           </Link>
         ))}
-        <div className="md:drop-shadow-xl">
+        <div className="md:drop-shadow-xl mt-5 h-full">
           <AddPlant />
         </div>
       </div>
