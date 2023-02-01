@@ -1,10 +1,9 @@
 import React from "react";
-import AddPlant from "../components/AddPlant";
 
 function Product() {
   return (
     <div>
-      <AddPlant />
+      <h4>Product</h4>
     </div>
   );
 }
