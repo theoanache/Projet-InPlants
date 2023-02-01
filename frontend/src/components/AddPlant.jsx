@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import aloe from "../assets/aloevera.png";
+import addplant from "../assets/addplant.png";
 
 function AddPlant() {
   const [plant, setPlant] = useState({
@@ -28,10 +28,10 @@ function AddPlant() {
   };
 
   return (
-    <form onSubmit={submitActionHandler}>
-      <div className="flex items-center bg-green min-w-[350px] rounded-[20px]">
+    <form onSubmit={submitActionHandler} className="h-full">
+      <div className="flex items-center h-[100%] bg-green min-w-[350px] rounded-[20px]">
         <div className="h-full w-1/2 flex items-center">
-          <img src={aloe} alt="plante" />
+          <img src={addplant} alt="plante" />
         </div>
         <div className="w-1/2 relative">
           <div className="flex flex-col gap-2 mr-3 rounded-lg text-sm">
@@ -47,7 +47,7 @@ function AddPlant() {
               type="text"
               name="family"
               value={plant.family}
-              placeholder="famille de la plante"
+              placeholder="famille"
               className="pl-1"
               onChange={handleChange}
             />
@@ -56,7 +56,7 @@ function AddPlant() {
               type="text"
               name="price"
               value={plant.price}
-              placeholder="Prix"
+              placeholder="Prix en euros"
               onChange={handleChange}
             />
             <button type="submit" className="h-6 text-sm bg-white rounded-lg">

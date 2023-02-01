@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import ImgCard from "./ImgCard";
 import fleche from "../assets/fleche.png";
 import flecheD from "../assets/flecheD.png";
-import AddCards from "./addCard/AddCards";
+import AddPlant from "./AddPlant";
 
 function Cards() {
   const { id } = useParams();
@@ -49,7 +49,9 @@ function Cards() {
             className="flex items-center bg-white min-w-[350px] rounded-[20px]"
           >
             <div className="h-full w-1/2 flex items-center">
-              <ImgCard image={plant.image} />
+              <ImgCard
+                image={plant.image ? plant.image : "../assets/addplant.png"}
+              />
             </div>
             <div className="w-1/2 relative">
               <div
@@ -65,7 +67,9 @@ function Cards() {
             </div>
           </div>
         ))}
-        <AddCards />
+        <div className="md:drop-shadow-xl">
+          <AddPlant />
+        </div>
       </div>
       <button
         className="w-20 h-20 p-2 md:drop-shadow-xl"
