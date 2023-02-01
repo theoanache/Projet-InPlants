@@ -36,6 +36,20 @@ const plantsController = {
       .catch((err) => next(err));
   },
 
+  addPlant: (req, res, next) => {
+    const plantsData = req.body;
+    plantsModel
+      .createPlant(plantsData)
+      .then((plant) => {
+        if (plant.affectedRows !== 0) {
+          res.status(201).send(`Plant has been created`);
+        } else {
+          res.status(404).send(`Error creating plant`);
+        }
+      })
+      .catch((err) => next(err));
+  },
+
   updatePlant: (req, res, next) => {
     const { id } = req.params;
     const plantsData = req.body;

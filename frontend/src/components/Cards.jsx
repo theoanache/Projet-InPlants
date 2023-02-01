@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import ImgCard from "./ImgCard";
 import fleche from "../assets/fleche.png";
 import flecheD from "../assets/flecheD.png";
 import AddCards from "./addCard/AddCards";
 
-function Cards(id) {
+function Cards() {
+  const { id } = useParams();
   const scrl = useRef(null);
   const [plants, setPlants] = useState([]);
   const [scrollX, setscrollX] = useState(0);
@@ -16,7 +18,9 @@ function Cards(id) {
   };
 
   const deletePlant = () => {
-    axios.delete(`http://localhost:8000/plant/${id}`).then((res) => res);
+    axios
+      .delete(`http://localhost:5000/plant/${id}`)
+      .then((res) => setPlants(res));
   };
 
   useEffect(() => {

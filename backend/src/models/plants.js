@@ -24,6 +24,13 @@ const findPlantByFamily = (id) => {
     .then(([res]) => res);
 };
 
+const createPlant = (payload) => {
+  return db
+    .promise()
+    .query("INSERT INTO plants SET ?", [payload])
+    .then(([res]) => res);
+};
+
 const updatePlant = (payload, id) => {
   return db
     .promise()
@@ -42,6 +49,7 @@ module.exports = {
   findAllPlants,
   findOnePlant,
   findPlantByFamily,
+  createPlant,
   updatePlant,
   deletePlants,
 };
