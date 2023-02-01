@@ -50,9 +50,7 @@ function Cards() {
               className="flex items-center mt-5 bg-white h-[100%] min-w-[350px] rounded-[20px]"
             >
               <div className="h-full w-1/2 flex items-center">
-                <ImgCard
-                  image={plant.image ? plant.image : "../assets/addplant.png"}
-                />
+                <ImgCard image={plant.image} />
               </div>
               <div className="w-1/2 relative">
                 <div

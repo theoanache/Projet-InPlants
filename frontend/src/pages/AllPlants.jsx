@@ -20,12 +20,12 @@ function AllPlants() {
             key={plant.id}
             className="flex md:drop-shadow-xl rounded-lg bg-white  w-[48%] h-[220px]"
           >
-            <div className="w-2/5">
+            <div className="max-w-[150px] pl-4 h-full flex justify-center items-center  ">
               <ImgCard image={plant.image} />
             </div>
-            <div>
+            <div className="text-sm">
               <h4>{plant.name}</h4>
-              <p className="text-sm">{plant.description}</p>
+              <p>{plant.description}</p>
               <h4>{plant.Origin}</h4>
               <h4>{plant.sunshine}</h4>
               <h4>{plant.arrosage}</h4>
