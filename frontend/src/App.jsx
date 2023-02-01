@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Plantes from "./pages/Plantes";
 import Favorites from "./pages/Favorites";
+import AllPlants from "./pages/AllPlants";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/plantes" element={<Plantes />} />
+        <Route path="/plante" element={<AllPlants />} />
+        <Route path="/plante/:id" element={<Plantes />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
