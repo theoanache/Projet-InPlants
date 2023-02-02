@@ -48,6 +48,10 @@ function Plantes() {
               <span className="font-bold">feuillage :</span>{" "}
               {plantDetails[0].feuillage}
             </p>
+            <p className="text-black text-xl mt-8">
+              {" "}
+              <span className="font-bold">Prix</span> {plantDetails[0].price} €
+            </p>
             <div className="flex gap-2">
               <button
                 type="button"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import plante from "../assets/plante.png";
 import BestDeal from "../assets/best-deal.png";
 import Cards from "./Cards";
@@ -25,13 +26,15 @@ function Presentation() {
               {" "}
               Ajouter au panier
             </button>
-            <button
-              type="button"
-              className="rounded-br-lg mt-4 w-[180px] h-[40px] bg-white font-bold text-base text-grey "
-            >
-              {" "}
-              En savoir plus
-            </button>
+            <Link to="/about">
+              <button
+                type="button"
+                className="rounded-br-lg mt-4 w-[180px] h-[40px] bg-white font-bold text-base text-grey "
+              >
+                {" "}
+                En savoir plus
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-1/2 relative">

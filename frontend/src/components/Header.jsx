@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import Caddie from "../assets/caddie.png";
 import Search from "../assets/search-gris.png";
@@ -15,9 +15,11 @@ function Header() {
 
   return (
     <div className="flex items-end justify-between w-screen pt-8">
-      <div className="w-28 ml-12">
-        <img src={Logo} alt="logo Inplants" />
-      </div>
+      <Link to="/">
+        <div className="w-28 ml-12">
+          <img src={Logo} alt="logo Inplants" />
+        </div>
+      </Link>
       <div className="flex gap-8 font-semibold text-grey text-lg">
         {Navbar.map((element) => (
           <NavLink key={element.key} to={element.link}>
