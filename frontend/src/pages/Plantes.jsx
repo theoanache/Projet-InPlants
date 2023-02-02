@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom/dist";
+import { useNavigate, useParams } from "react-router-dom/dist";
 import axios from "axios";
 import ImgCard from "../components/ImgCard";
 import Minipelle from "../assets/minipelle.png";
+import flecheD from "../assets/flecheD.png";
+import flecheG from "../assets/fleche.png";
 
 function Plantes() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [plantDetails, setPlantDetails] = useState();
 
@@ -16,6 +19,16 @@ function Plantes() {
       setLoading(false);
     });
   }, [id]);
+
+  const changePlant = (where, idP) => {
+    if (idP === 1 && where === "back") {
+      return;
+    }
+    // eslint-disable-next-line no-unused-expressions
+    where === "next"
+      ? navigate(`/plante/${idP + 1}`)
+      : navigate(`/plante/${idP - 1}`);
+  };
 
   return (
     <div>
@@ -78,6 +91,22 @@ function Plantes() {
               </div>
             </div>
             <ImgCard image={plantDetails[0].image} />
+            {plantDetails[0].id > 1 && (
+              <button
+                className="w-20 h-20 p-2 md:drop-shadow-xl absolute -left-8 top-[70%]"
+                type="button"
+                onClick={() => changePlant("back", plantDetails[0].id)}
+              >
+                <img src={flecheG} alt="icon fleche" />
+              </button>
+            )}
+            <button
+              className="w-20 h-20 p-2 md:drop-shadow-xl absolute right-28 top-[70%]"
+              type="button"
+              onClick={() => changePlant("next", plantDetails[0].id)}
+            >
+              <img src={flecheD} alt="icon fleche" />
+            </button>
           </div>
         </div>
       )}

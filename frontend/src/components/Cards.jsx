@@ -56,7 +56,7 @@ function Cards() {
                 <div
                   className="-top-8 left-32 absolute w-[30px] h-[30px] bg-red-700 right-1 rounded-full z-2 text-white flex items-center justify-center font-black text-md cursor-pointer"
                   role="presentation"
-                  onClick={() => deletePlant(id)}
+                  onClick={() => deletePlant(plant.id)}
                 >
                   &#x2715;
                 </div>
