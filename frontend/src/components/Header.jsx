@@ -20,7 +20,7 @@ function Header() {
           <img src={Logo} alt="logo Inplants" />
         </div>
       </Link>
-      <div className="flex gap-8 font-semibold text-grey text-lg">
+      <div className="flex gap-8 font-semibold text-grey text-lg max-sm:hidden">
         {Navbar.map((element) => (
           <NavLink
             className={({ isActive }) =>

@@ -25,7 +25,7 @@ function Cards() {
   return (
     <div className="flex items-center justify-center w-[95%]">
       <button
-        className="w-20 h-20 p-2 md:drop-shadow-xl"
+        className="w-20 h-20 p-2 md:drop-shadow-xl max-sm:hidden"
         type="button"
         onClick={() => slide(-366)}
       >
@@ -34,7 +34,7 @@ function Cards() {
 
       <div
         ref={scrl}
-        className="h-[250px] flex gap-4 overflow-x-scroll w-[90%] pb-8 md:drop-shadow-xl"
+        className="h-[250px] flex gap-4 overflow-x-scroll w-[90%] pb-8 md:drop-shadow-xl max-sm:mt-24"
       >
         {plants.map((plant) => (
           <DeleteCard plant={plant} key={plant.id} />
@@ -44,7 +44,7 @@ function Cards() {
         </div>
       </div>
       <button
-        className="w-20 h-20 p-2 md:drop-shadow-xl"
+        className="w-20 h-20 p-2 md:drop-shadow-xl max-sm:hidden"
         type="button"
         onClick={() => slide(+366)}
       >

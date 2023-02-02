@@ -35,9 +35,9 @@ function Plantes() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="flex h-screen w-full pl-12 pt-6 bg-background">
-          <div className="flex flex-col w-1/2">
-            <h4 className="font-black text-darkgrey text-7xl w-1/2 mt-24">
+        <div className="flex h-screen w-full pl-12 pt-6 bg-background max-sm:flex-col">
+          <div className="flex flex-col w-1/2 max-sm:w-full">
+            <h4 className="font-black text-darkgrey text-7xl w-1/2 mt-24 max-sm:mt-6">
               {plantDetails[0].name}
             </h4>
             <p className="mt-4 text-grey w-2/3">
@@ -76,7 +76,7 @@ function Plantes() {
             </div>
           </div>
           <div className="w-1/2 relative">
-            <div className="absolute md:drop-shadow-xl flex items-center backdrop-blur-sm bg-white rounded-[16px] h-24 w-60 top-64 -left-24">
+            <div className="absolute md:drop-shadow-xl flex items-center backdrop-blur-sm bg-white rounded-[16px] h-24 w-60 top-64 -left-24 max-sm:hidden">
               <div className=" ml-2 flex items-center justify-center w-[85px] h-[80px] bg-green rounded-lg ">
                 <img
                   className="h-4/5"
@@ -93,7 +93,7 @@ function Plantes() {
             <ImgCard image={plantDetails[0].image} />
             {plantDetails[0].id > 1 && (
               <button
-                className="w-20 h-20 p-2 md:drop-shadow-xl absolute -left-8 top-[70%]"
+                className="w-20 h-20 p-2 md:drop-shadow-xl absolute -left-8 top-[70%] max-sm:hidden"
                 type="button"
                 onClick={() => changePlant("back", plantDetails[0].id)}
               >
@@ -101,7 +101,7 @@ function Plantes() {
               </button>
             )}
             <button
-              className="w-20 h-20 p-2 md:drop-shadow-xl absolute right-28 top-[70%]"
+              className="w-20 h-20 p-2 md:drop-shadow-xl absolute right-28 top-[70%] max-sm:hidden"
               type="button"
               onClick={() => changePlant("next", plantDetails[0].id)}
             >

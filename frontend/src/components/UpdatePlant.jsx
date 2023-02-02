@@ -35,11 +35,11 @@ function UpdatePlant({ plant }) {
   };
 
   return (
-    <div className="flex md:drop-shadow-xl rounded-lg bg-white w-[80%] h-[470px]">
-      <div className="max-w-[200px] min-w-[200px] pl-4 h-full flex justify-center items-center  ">
+    <div className="flex md:drop-shadow-xl rounded-lg bg-white w-[80%] h-[470px] max-sm:flex-col max-sm:h-[700px] max-sm:pl-4">
+      <div className="max-w-[200px] min-w-[200px] pl-4 h-full flex justify-center items-center  max-sm:h-1/2">
         <ImgCard image={plant.image} />
       </div>
-      <div className="text-sm text-black flex flex-col w-[75%]">
+      <div className="text-sm text-black flex flex-col w-[75%] max-sm:w-[90%]">
         <div className="flex flex-col mb-1">
           <label className="font-semibold text-grey" htmlFor="Nom">
             Nom
@@ -126,7 +126,7 @@ function UpdatePlant({ plant }) {
         </div>
         <button
           type="button"
-          className="bg-green text-white font-bold text-lg py-2 pt-2 w-[20%] rounded"
+          className="bg-green text-white font-bold text-lg py-2 pt-2 w-[20%] rounded max-sm:mb-4 max-sm:w-[40%]"
           onClick={handleClick}
         >
           Modifier

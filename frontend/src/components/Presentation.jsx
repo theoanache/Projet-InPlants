@@ -7,12 +7,12 @@ import Cards from "./Cards";
 function Presentation() {
   return (
     <div>
-      <div className="flex h-full w-full pl-12">
-        <div className="flex flex-col w-1/2">
-          <h4 className="font-black text-darkgrey text-7xl w-1/2 mt-24">
+      <div className="flex h-full w-full pl-12 max-sm:flex-col">
+        <div className="flex flex-col w-1/2 max-sm:w-full">
+          <h4 className="font-black text-darkgrey text-7xl w-1/2 mt-24 max-sm:text-5xl max-sm:mt-10">
             Vente de Plantes d'Interieurs
           </h4>
-          <p className="mt-4 text-grey w-2/3">
+          <p className="mt-4 text-grey w-2/3 max-sm:w-full max-sm:pr-6">
             Les plus belles plantes d’intérieur sont utilisées pour décorer et
             embellir les pièces d’une maison ou d’un appartement et apaiser son
             atmosphère. Faciles à entretenir, elles sont capables de s’adapter à
@@ -37,8 +37,8 @@ function Presentation() {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 relative">
-          <div className="absolute md:drop-shadow-xl flex items-center backdrop-blur-sm bg-gray rounded-[16px] h-24 w-60 top-64 -left-24">
+        <div className="w-1/2 relative max-sm:w-full max-sm:mt-12">
+          <div className="absolute md:drop-shadow-xl flex items-center backdrop-blur-sm bg-gray rounded-[16px] h-24 w-60 top-64 -left-24 max-sm:hidden">
             <div className="pl-5 pt-4 ml-2 w-[80px] h-[80px] bg-white rounded-lg ">
               <img className="h-4/5" src={BestDeal} alt="icon meilleur vente" />
             </div>

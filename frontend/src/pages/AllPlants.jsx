@@ -25,12 +25,12 @@ function AllPlants() {
 
   return (
     <div className="w-full h-full">
-      <div className="flex items-center justify-around  pt-8">
-        <h4 className="font-bold text-2xl pt-2 pb-4 ">
+      <div className="flex items-center justify-around  pt-8 max-sm:flex-col">
+        <h4 className="font-bold text-2xl pt-2 pb-4 max-sm:text-xl">
           Listing des plantes pour modification
         </h4>
         <select
-          className="w-[20%] h-[40px] rounded-lg pl-4"
+          className="w-[20%] h-[40px] rounded-lg pl-4 max-sm:mb-2"
           onChange={handleChange}
         >
           <option value="">Toutes les familles </option>
