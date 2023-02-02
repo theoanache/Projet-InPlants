@@ -31,7 +31,7 @@ function AddPlant() {
 
   return (
     <form onSubmit={submitActionHandler} className="h-full">
-      <div className="flex items-center h-[100%] bg-green min-w-[350px] rounded-[20px]">
+      <div className="flex items-center h-[250px] bg-green min-w-[350px] rounded-[20px]">
         <div className="h-full w-1/2 flex items-center">
           <img src={addplant} alt="plante" />
         </div>
