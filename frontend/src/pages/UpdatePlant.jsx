@@ -55,7 +55,7 @@ function UpdatePlant({ plant }) {
             description
           </label>
           <textarea
-            className="pl-1 border-2 border-gray  rounded-lg h-28"
+            className="pl-1 border-2 border-gray  rounded-lg h-24"
             type="text"
             name="description"
             defaultValue={plant.description}
@@ -112,7 +112,7 @@ function UpdatePlant({ plant }) {
         </div>
         <button
           type="button"
-          className="bg-green text-white font-bold text-lg py-2 w-[20%] rounded"
+          className="bg-green text-white font-bold text-lg py-2 pt-2 w-[20%] rounded"
           onClick={handleClick}
         >
           Modifier
