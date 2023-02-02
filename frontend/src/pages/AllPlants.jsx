@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import UpdatePlant from "./UpdatePlant";
+import UpdatePlant from "../components/UpdatePlant";
 
 function AllPlants() {
   const [plants, setPlants] = useState([]);
@@ -32,7 +32,7 @@ function AllPlants() {
           className="w-[20%] h-[40px] rounded-lg pl-4"
           onChange={handleChange}
         >
-          <option value="">Toutes les famille </option>
+          <option value="">Toutes les familles </option>
           {family.map((element) => (
             <option key={element.id} value={element.title}>
               {element.title}

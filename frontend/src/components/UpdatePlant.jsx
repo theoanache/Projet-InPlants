@@ -2,11 +2,12 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import axios from "axios";
-import ImgCard from "../components/ImgCard";
+import ImgCard from "./ImgCard";
 
 function UpdatePlant({ plant }) {
   const [plante, setPlante] = useState({
     name: plant.name || null,
+    family: plant.family || null,
     description: plant.description || null,
     Origin: plant.Origin || null,
     sunshine: plant.sunshine || null,
@@ -23,6 +24,7 @@ function UpdatePlant({ plant }) {
     axios
       .put(`http://localhost:5000/plants/${plant.id}`, {
         name: plante.name || plant.name,
+        family: plante.family || plant.family,
         description: plante.description || plant.description,
         Origin: plante.Origin || plant.Origin,
         sunshine: plante.sunshine || plant.sunshine,
@@ -33,7 +35,7 @@ function UpdatePlant({ plant }) {
   };
 
   return (
-    <div className="flex md:drop-shadow-xl rounded-lg bg-white w-[80%] h-[430px]">
+    <div className="flex md:drop-shadow-xl rounded-lg bg-white w-[80%] h-[470px]">
       <div className="max-w-[200px] min-w-[200px] pl-4 h-full flex justify-center items-center  ">
         <ImgCard image={plant.image} />
       </div>
@@ -47,6 +49,18 @@ function UpdatePlant({ plant }) {
             type="text"
             name="name"
             defaultValue={plant.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex flex-col mb-1">
+          <label className="font-semibold text-grey" htmlFor="family">
+            family
+          </label>
+          <input
+            className="pl-1 border-2 border-gray  rounded-lg"
+            type="text"
+            name="family"
+            defaultValue={plant.family}
             onChange={handleChange}
           />
         </div>
@@ -125,6 +139,7 @@ function UpdatePlant({ plant }) {
 UpdatePlant.propTypes = {
   plant: PropTypes.shape({
     Origin: PropTypes.string.isRequired,
+    family: PropTypes.string.isRequired,
     arrosage: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     feuillage: PropTypes.string.isRequired,
