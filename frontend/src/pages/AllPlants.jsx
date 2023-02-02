@@ -18,6 +18,7 @@ function AllPlants() {
       .get("http://localhost:5000/family")
       .then((res) => setFamily(res.data));
   }, []);
+
   const handleChange = (event) => {
     setSelectedFamily(event.target.value);
   };

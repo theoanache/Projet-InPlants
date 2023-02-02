@@ -8,6 +8,7 @@ function AddPlant() {
     family: "",
     price: "",
     isfavorite: false,
+    image: "addplant.png",
   });
 
   const handleChange = (event) => {
@@ -22,6 +23,7 @@ function AddPlant() {
         family: plant.family,
         price: plant.price,
         isfavorite: plant.isfavorite,
+        image: plant.image,
       })
       .then((response) => response)
       .catch((error) => console.error(error));
