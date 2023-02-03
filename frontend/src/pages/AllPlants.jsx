@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import UpdatePlant from "./UpdatePlant";
+import UpdatePlant from "../components/UpdatePlant";
 
 function AllPlants() {
   const [plants, setPlants] = useState([]);
+  const [family, setFamily] = useState([]);
+  const [selectedFamily, setSelectedFamily] = useState("");
 
   useEffect(() => {
     axios
@@ -11,13 +13,42 @@ function AllPlants() {
       .then((res) => setPlants(res.data));
   }, []);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/family")
+      .then((res) => setFamily(res.data));
+  }, []);
+
+  const handleChange = (event) => {
+    setSelectedFamily(event.target.value);
+  };
+
   return (
     <div className="w-full h-full">
-      <h4 className="font-bold text-2xl pt-8 pb-4 pl-5">Listing des plantes</h4>
+      <div className="flex items-center justify-around  pt-8 max-sm:flex-col">
+        <h4 className="font-bold text-2xl pt-2 pb-4 max-sm:text-xl">
+          Listing des plantes pour modification
+        </h4>
+        <select
+          className="w-[20%] h-[40px] rounded-lg pl-4 max-sm:mb-2"
+          onChange={handleChange}
+        >
+          <option value="">Toutes les familles </option>
+          {family.map((element) => (
+            <option key={element.id} value={element.title}>
+              {element.title}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className="flex flex-wrap gap-5 items-center justify-center">
-        {plants.map((plant) => (
-          <UpdatePlant plant={plant} key={plant.id} />
-        ))}
+        {plants
+          .filter(
+            (plant) => selectedFamily === "" || plant.family === selectedFamily
+          )
+          .map((plant) => (
+            <UpdatePlant plant={plant} key={plant.id} />
+          ))}
       </div>
     </div>
   );
