@@ -57,7 +57,7 @@ function DeleteCard({ plant }) {
                 Lumière : &nbsp;
               </h2>
               <img
-                className="w-7"
+                className="w-0 group-hover:w-7"
                 src={ensoleillement}
                 alt="picto ensoleillement"
               />
