@@ -8,7 +8,7 @@ function AddPlant() {
     family: "",
     price: "",
     isfavorite: false,
-    image: "addplant.png",
+    image: "addplant2.png",
   });
 
   const handleChange = (event) => {
